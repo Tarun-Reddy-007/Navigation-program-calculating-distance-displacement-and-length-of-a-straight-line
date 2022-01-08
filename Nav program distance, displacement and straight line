@@ -1,0 +1,39 @@
+fwd=0
+lft=0
+rgt=0
+bwd=0
+flag=0
+while(flag==0):
+    dir=int(input("Enter 8 to move forward, 4 to move to the left, 6 to move to the right, 2 to move backwards or 0 to stop moving :"))
+    if(dir==8):
+        fwd=fwd+1
+    elif(dir==4):
+        lft=lft+1
+    elif(dir==6):
+        rgt=rgt+1
+    elif(dir==2):
+        bwd=bwd+1
+    else:
+        flag=1
+        print("You have stopped moving.")
+print("You have moved "+str(fwd)+" steps forward.")
+print("You have moved "+str(lft)+" steps to the left.")
+print("You have moved "+str(rgt)+" steps to the right.")
+print("You have moved "+str(bwd)+" steps backwards.")
+td=fwd+bwd+lft+rgt
+print("Total distance travelled is "+str(td)+" steps.")
+if(fwd>bwd):
+    fb=fwd-bwd
+else:
+    fb=bwd-fwd
+if(lft>rgt):
+    lr=lft-rgt
+else:
+    lr=rgt-lft
+sd=fb+lr
+print("The Shortest Distance is "+str(sd)+" steps.")
+fb2=fb*fb
+lr2=lr*lr
+fl2=fb2+lr2
+sl=float(fl2)**0.5
+print("Straight line is "+str(sl)+" steps long.")
